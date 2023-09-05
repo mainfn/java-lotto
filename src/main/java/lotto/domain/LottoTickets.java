@@ -31,4 +31,17 @@ public final class LottoTickets {
     return LottoDrawingResults.of(lottoDrawingResults);
   }
 
+  @Override
+  public String toString() {
+    final StringBuilder sb = new StringBuilder(24 * lottoTickets.size());
+
+    sb.append(String.format("\n%d개를 구매했습니다.\n", lottoTickets.size()));
+
+    for (final LottoTicket lottoTicket : lottoTickets) {
+      sb.append(lottoTicket.toString());
+      sb.append("\n");
+    }
+
+    return sb.toString();
+  }
 }
