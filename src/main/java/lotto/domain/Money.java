@@ -9,6 +9,10 @@ public final class Money {
     this.amount = amount;
   }
 
+  public static Money of(final int amount) {
+    return new Money(amount);
+  }
+
   // TODO: 이후 필요에 따라 기능 추가
   public void increase(final Money other) {
     amount += other.amount;
