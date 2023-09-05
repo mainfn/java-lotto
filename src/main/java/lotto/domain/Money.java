@@ -10,16 +10,14 @@ public final class Money {
   }
 
   // TODO: 이후 필요에 따라 기능 추가
-  public void increase(final int amount) {
-    final int nextAmount = this.amount + amount;
-    validateAmount(nextAmount);
-    this.amount = nextAmount;
+  public void increase(final Money other) {
+    amount += other.amount;
   }
 
-  public void decrease(final int amount) {
-    final int nextAmount = this.amount - amount;
+  public void decrease(final Money other) {
+    final int nextAmount = amount - other.amount;
     validateAmount(nextAmount);
-    this.amount = nextAmount;
+    amount = nextAmount;
   }
 
 
