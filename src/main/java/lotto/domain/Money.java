@@ -13,6 +13,10 @@ public final class Money {
     return new Money(amount);
   }
 
+  public boolean isEqualOrMoreThan(final Money other) {
+    return amount >= other.amount;
+  }
+
   // TODO: 이후 필요에 따라 기능 추가
   public void increase(final Money other) {
     amount += other.amount;
