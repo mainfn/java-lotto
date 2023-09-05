@@ -22,6 +22,10 @@ public final class Money {
     amount += other.amount;
   }
 
+  public int getAmount() {
+    return amount;
+  }
+
   public void decrease(final Money other) {
     final int nextAmount = amount - other.amount;
     validateAmount(nextAmount);
@@ -31,7 +35,7 @@ public final class Money {
 
   private void validateAmount(final int amount) {
     if (amount < 0) {
-      throw new IllegalStateException("잔액은 음수가 될 수 없습니다.");
+      throw new IllegalStateException("[ERROR] 잔액은 음수가 될 수 없습니다.");
     }
   }
 }
