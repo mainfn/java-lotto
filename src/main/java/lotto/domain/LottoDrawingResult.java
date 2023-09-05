@@ -51,14 +51,6 @@ public enum LottoDrawingResult {
     return LottoDrawingResult.NONE;
   }
 
-  public int getMatchingNumbersCount() {
-    return matchingNumbersCount;
-  }
-
-  public boolean isHasBonusNumber() {
-    return hasBonusNumber;
-  }
-
   public int getPrizeAmount() {
     return prizeAmount;
   }
