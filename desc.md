@@ -28,5 +28,9 @@
 
 ## 7. LottoDrawingResult
 
-- Lotto 추첨 결과를 담고 있다.(구매 금액, 당첨 통계, 수익률 등)
-- toString으로 출력에 맞게 포맷팅 하는 기능
+- Lotto 추첨 결과를 담고 있다.
+
+## 8. LottoDrawingResults
+
+- 로또 추첨 결과인 LottoDrawingResult의 일급 컬렉션
+- 구매 금액, 당첨 통계, 수익률 등의 통계에 맞춰 포맷팅 하는 기능
