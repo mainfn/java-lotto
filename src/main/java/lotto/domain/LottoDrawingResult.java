@@ -36,25 +36,19 @@ public enum LottoDrawingResult {
       final boolean hasBonusNumber
   ) {
     if (matchingNumbersCount == 5 && hasBonusNumber) {
-      return results.stream()
-          .filter(results -> results.hasBonusNumber)
-          .findFirst()
-          .get();
+      return LottoDrawingResult.SECOND;
     }
 
     final Optional<LottoDrawingResult> result = results.stream()
-        .filter(results -> !results.hasBonusNumber)
-        .filter(results -> results.matchingNumbersCount == matchingNumbersCount)
+        .filter(r -> r.matchingNumbersCount == matchingNumbersCount)
+        .filter(r -> !r.equals(LottoDrawingResult.SECOND))
         .findFirst();
 
     if (result.isPresent()) {
       return result.get();
     }
 
-    return result.stream()
-        .filter(results -> results.prizeAmount == 0)
-        .findFirst()
-        .get();
+    return LottoDrawingResult.NONE;
   }
 
   public int getMatchingNumbersCount() {
