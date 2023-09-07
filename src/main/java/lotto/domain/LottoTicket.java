@@ -1,6 +1,7 @@
 package lotto.domain;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public final class LottoTicket {
 
@@ -49,7 +50,10 @@ public final class LottoTicket {
 
   @Override
   public String toString() {
-    return numbers.toString();
+    return numbers.stream()
+        .sorted()
+        .collect(Collectors.toList())
+        .toString();
   }
 
 }
